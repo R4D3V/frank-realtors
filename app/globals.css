@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  /* Neumorphic base surface */
+  --color-base: #e9ecf3;
+  --color-base-light: #ffffff;
+  --color-base-dark: #c3cadb;
+
+  /* Brand palette, pulled from the Frank Realtors mark */
+  --color-navy: #182848;
+  --color-navy-soft: #2c3a63;
+  --color-red: #c8202b;
+  --color-red-soft: #e14b52;
+  --color-gold: #d9a441;
+  --color-ink: #1b2436;
+  --color-mist: #545e73;
+
+  --font-display: var(--font-sans), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-ink);
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 500;
+}
+
+/* Headings/display text (font-display) render bold by default now,
+   since Tailwind's font-display utility only sets the family, not weight */
+.font-display {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---- Neumorphic primitives ---- */
+
+.neu-raised {
+  background: var(--color-base);
+  border-radius: 1.5rem;
+  box-shadow:
+    9px 9px 18px rgba(163, 172, 196, 0.55),
+    -9px -9px 18px rgba(255, 255, 255, 0.85);
+}
+
+.neu-raised-sm {
+  background: var(--color-base);
+  border-radius: 1rem;
+  box-shadow:
+    5px 5px 10px rgba(163, 172, 196, 0.5),
+    -5px -5px 10px rgba(255, 255, 255, 0.8);
+}
+
+.neu-pressed {
+  background: var(--color-base);
+  border-radius: 1rem;
+  box-shadow:
+    inset 5px 5px 10px rgba(163, 172, 196, 0.55),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.85);
+}
+
+.neu-pill {
+  background: var(--color-base);
+  border-radius: 999px;
+  box-shadow:
+    5px 5px 10px rgba(163, 172, 196, 0.5),
+    -5px -5px 10px rgba(255, 255, 255, 0.8);
+}
+
+.neu-pill:active,
+.neu-btn:active {
+  box-shadow:
+    inset 4px 4px 8px rgba(163, 172, 196, 0.55),
+    inset -4px -4px 8px rgba(255, 255, 255, 0.85);
+}
+
+.neu-btn {
+  background: var(--color-base);
+  border-radius: 999px;
+  box-shadow:
+    6px 6px 12px rgba(163, 172, 196, 0.55),
+    -6px -6px 12px rgba(255, 255, 255, 0.85);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.neu-btn:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    8px 8px 16px rgba(163, 172, 196, 0.6),
+    -8px -8px 16px rgba(255, 255, 255, 0.9);
+}
+
+.neu-card {
+  background: var(--color-base);
+  border-radius: 1.75rem;
+  box-shadow:
+    10px 10px 22px rgba(163, 172, 196, 0.5),
+    -10px -10px 22px rgba(255, 255, 255, 0.85);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.neu-card:hover {
+  box-shadow:
+    14px 14px 28px rgba(163, 172, 196, 0.55),
+    -14px -14px 28px rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.neu-divider {
+  height: 3px;
+  border-radius: 999px;
+  background: var(--color-base);
+  box-shadow:
+    inset 2px 2px 4px rgba(163, 172, 196, 0.5),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.85);
+}
+
+/* Signature arrow marker — echoes the gold arrow bullets on the Frank Realtors flyer */
+.arrow-bullet {
+  position: relative;
+  padding-left: 1.9rem;
+}
+
+.arrow-bullet::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 10px solid var(--color-gold);
+}
