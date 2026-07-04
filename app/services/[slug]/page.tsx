@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Section from "@/components/Section";
 import ServiceCard from "@/components/ServiceCard";
 import ContactForm from "@/components/ContactForm";
+import InquireButton from "@/components/InquireButton";
 import Reveal from "@/components/Reveal";
 import { services } from "@/lib/data";
 
@@ -75,12 +76,7 @@ export default async function ServiceDetailPage({
                   </li>
                 ))}
               </ul>
-              <Link
-                href="/contact"
-                className="neu-btn mt-7 flex items-center justify-center px-6 py-3 text-sm font-semibold text-red"
-              >
-                Enquire about this service
-              </Link>
+              <InquireButton serviceName={service.name} serviceSlug={service.slug} />
             </div>
           </Reveal>
         </div>

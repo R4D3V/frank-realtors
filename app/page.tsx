@@ -22,12 +22,15 @@ export default function Home() {
                 We Have It.
               </h1>
               <p className="mt-6 max-w-xl text-balance text-lg leading-relaxed text-mist">
-                Frank Realtors develops, surveys, documents, and sells land across
-                Wakiso and Mpigi — with estates from Busunju to Buloba, and
+                Frank Realtors develops, surveys, documents, and sells land
+                across Wakiso and Mpigi — with estates around Entebbe, and
                 installment payments on every plot.
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-4">
-                <Link href="/land" className="neu-btn px-7 py-3.5 text-sm font-semibold text-red">
+                <Link
+                  href="/land"
+                  className="neu-btn px-7 py-3.5 text-sm font-semibold text-red"
+                >
                   View land available
                 </Link>
                 <a
@@ -50,13 +53,16 @@ export default function Home() {
               <div className="neu-raised relative mx-auto flex aspect-square w-full max-w-sm items-center justify-center p-10">
                 <div className="neu-pressed flex h-full w-full flex-col items-center justify-center gap-4 p-8 text-center">
                   <RoofBadge />
-                  <p className="font-display text-3xl text-navy">Frank Realtors</p>
+                  <p className="font-display text-3xl text-navy">
+                    Frank Realtors
+                  </p>
                   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold">
                     We Have It
                   </p>
                   <div className="neu-divider w-16" />
                   <p className="text-sm leading-relaxed text-mist">
-                    Estate development to compound design — one team, start to finish.
+                    Estate development to compound design — one team, start to
+                    finish.
                   </p>
                 </div>
               </div>
@@ -93,17 +99,24 @@ export default function Home() {
                 <p className="text-xs font-semibold uppercase tracking-wide text-gold">
                   {plot.location}
                 </p>
-                <h3 className="mt-2 text-base font-semibold text-navy">{plot.name}</h3>
+                <h3 className="mt-2 text-base font-semibold text-navy">
+                  {plot.name}
+                </h3>
                 <p className="mt-4 font-display text-3xl text-red">
                   {plot.priceLow} – {plot.priceHigh}
                 </p>
-                <p className="mt-1 text-xs text-mist">per plot, installments available</p>
+                <p className="mt-1 text-xs text-mist">
+                  per plot, installments available
+                </p>
               </Link>
             </Reveal>
           ))}
         </div>
         <div className="mt-10 text-center">
-          <Link href="/land" className="neu-btn inline-block px-7 py-3.5 text-sm font-semibold text-red">
+          <Link
+            href="/land"
+            className="neu-btn inline-block px-7 py-3.5 text-sm font-semibold text-red"
+          >
             See all estates & prices
           </Link>
         </div>
@@ -119,7 +132,10 @@ export default function Home() {
             Own land in Busunju, Buloba, Zigoti, and more without paying it all
             upfront. Talk to us about a plan that fits your budget.
           </p>
-          <Link href="/contact" className="neu-btn px-8 py-3.5 text-sm font-semibold text-red">
+          <Link
+            href="/contact"
+            className="neu-btn px-8 py-3.5 text-sm font-semibold text-red"
+          >
             Ask about a payment plan
           </Link>
         </div>
@@ -139,7 +155,13 @@ function Stat({ value, label }: { value: string; label: string }) {
 
 function RoofBadge() {
   return (
-    <svg width="56" height="56" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg
+      width="56"
+      height="56"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
       <path d="M12 2L22 12H17V21H7V12H2L12 2Z" fill="#c8202b" />
       <path d="M12 6L18 12H15V18H9V12H6L12 6Z" fill="#182848" />
     </svg>

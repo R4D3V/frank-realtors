@@ -5,7 +5,6 @@ import { contact } from "@/lib/data";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
   const [interest, setInterest] = useState("");
   const [message, setMessage] = useState("");
 
@@ -15,7 +14,6 @@ export default function ContactForm() {
     const lines = [
       `New enquiry from the Frank Realtors website`,
       `Name: ${name}`,
-      phone ? `Phone: ${phone}` : null,
       interest ? `Interested in: ${interest}` : null,
       message ? `Message: ${message}` : null,
     ].filter(Boolean);
@@ -38,21 +36,6 @@ export default function ContactForm() {
           value={name}
           onChange={(e) => setName(e.target.value)}
           placeholder="e.g. Sarah Namutebi"
-          className="neu-pressed w-full border-none bg-base px-4 py-3 text-sm text-ink outline-none placeholder:text-mist focus-visible:ring-2 focus-visible:ring-red/60"
-        />
-      </div>
-
-      <div>
-        <label htmlFor="phone" className="mb-2 block text-sm font-medium text-navy">
-          Phone number
-        </label>
-        <input
-          id="phone"
-          required
-          type="tel"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          placeholder="e.g. 0700 000 000"
           className="neu-pressed w-full border-none bg-base px-4 py-3 text-sm text-ink outline-none placeholder:text-mist focus-visible:ring-2 focus-visible:ring-red/60"
         />
       </div>
