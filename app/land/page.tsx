@@ -18,6 +18,7 @@ export default function LandPage() {
         title="Land available"
         intro="We allow installment payments on every estate below. Prices are per-plot ranges — open a listing for the full photo gallery, features, and terms."
         className="pt-16"
+        noReveal
       >
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {landListings.map((plot, i) => (
@@ -68,7 +69,7 @@ export default function LandPage() {
         </div>
       </Section>
 
-      <Section className="pt-0!">
+      <Section className="pt-0!" noReveal>
         <div className="neu-raised flex flex-col items-center gap-6 p-10 text-center sm:p-14">
           <h2 className="font-display text-4xl text-navy sm:text-5xl">
             Don't see the right location?
