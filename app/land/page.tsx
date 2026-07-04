@@ -19,7 +19,7 @@ export default function LandPage() {
         intro="We allow installment payments on every estate below. Prices are per-plot ranges — open a listing for the full photo gallery, features, and terms."
         className="pt-16"
       >
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {landListings.map((plot, i) => (
             <div key={plot.slug} className="neu-card overflow-hidden">
               <Link href={`/land/${plot.slug}`} className="relative block aspect-[4/3] w-full">
