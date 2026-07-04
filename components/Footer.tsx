@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <span className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl neu-raised-sm">
-                <Image src="/logo.png" alt="Frank Realtors" fill className="object-cover" />
+                <Image src="/logo.png" alt="Frank Realtors" fill sizes="40px" className="object-cover" />
               </span>
               <p className="font-display text-3xl font-bold text-navy">
                 Frank <span className="text-red">Realtors</span>

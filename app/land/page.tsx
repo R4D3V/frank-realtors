@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import Section from "@/components/Section";
-import Reveal from "@/components/Reveal";
 import { landListings, contact } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -22,51 +21,49 @@ export default function LandPage() {
       >
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {landListings.map((plot, i) => (
-            <Reveal key={plot.slug} delay={(i % 6) * 60}>
-              <div className="neu-card overflow-hidden">
-                <Link href={`/land/${plot.slug}`} className="relative block aspect-[4/3] w-full">
-                  <Image
-                    src={plot.images[0]}
-                    alt={plot.name}
-                    fill
-                    sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
-                    className="object-cover"
-                  />
+            <div key={plot.slug} className="neu-card overflow-hidden">
+              <Link href={`/land/${plot.slug}`} className="relative block aspect-[4/3] w-full">
+                <Image
+                  src={plot.images[0]}
+                  alt={plot.name}
+                  fill
+                  sizes="(min-width: 1024px) 360px, (min-width: 640px) 45vw, 90vw"
+                  className="object-cover"
+                />
+              </Link>
+              <div className="p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-gold">
+                  {plot.location}
+                </p>
+                <Link href={`/land/${plot.slug}`}>
+                  <h3 className="mt-2 text-base font-semibold text-navy transition hover:text-red">
+                    {plot.name}
+                  </h3>
                 </Link>
-                <div className="p-6">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-gold">
-                    {plot.location}
-                  </p>
-                  <Link href={`/land/${plot.slug}`}>
-                    <h3 className="mt-2 text-base font-semibold text-navy transition hover:text-red">
-                      {plot.name}
-                    </h3>
+                <p className="mt-4 font-display text-3xl text-red">
+                  {plot.priceLow} – {plot.priceHigh}
+                </p>
+                <p className="mt-1 text-xs text-mist">per plot, installments available</p>
+                <div className="mt-5 flex gap-3">
+                  <Link
+                    href={`/land/${plot.slug}`}
+                    className="neu-raised-sm flex flex-1 items-center justify-center px-4 py-2.5 text-sm font-semibold text-navy"
+                  >
+                    View gallery
                   </Link>
-                  <p className="mt-4 font-display text-3xl text-red">
-                    {plot.priceLow} – {plot.priceHigh}
-                  </p>
-                  <p className="mt-1 text-xs text-mist">per plot, installments available</p>
-                  <div className="mt-5 flex gap-3">
-                    <Link
-                      href={`/land/${plot.slug}`}
-                      className="neu-raised-sm flex flex-1 items-center justify-center px-4 py-2.5 text-sm font-semibold text-navy"
-                    >
-                      View gallery
-                    </Link>
-                    <a
-                      href={`https://wa.me/${contact.phoneDigits}?text=${encodeURIComponent(
-                        `Hi Frank Realtors, I'm interested in ${plot.name} (${plot.priceLow} - ${plot.priceHigh}).`
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="neu-btn flex flex-1 items-center justify-center px-4 py-2.5 text-sm font-semibold text-red"
-                    >
-                      WhatsApp
-                    </a>
-                  </div>
+                  <a
+                    href={`https://wa.me/${contact.phoneDigits}?text=${encodeURIComponent(
+                      `Hi Frank Realtors, I'm interested in ${plot.name} (${plot.priceLow} - ${plot.priceHigh}).`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="neu-btn flex flex-1 items-center justify-center px-4 py-2.5 text-sm font-semibold text-red"
+                  >
+                    WhatsApp
+                  </a>
                 </div>
               </div>
-            </Reveal>
+            </div>
           ))}
         </div>
       </Section>

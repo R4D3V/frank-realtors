@@ -84,6 +84,7 @@ export default function AboutPage() {
                     src="/logo.png"
                     alt="Frank Realtors"
                     fill
+                    sizes="80px"
                     className="object-cover"
                   />
                 </span>

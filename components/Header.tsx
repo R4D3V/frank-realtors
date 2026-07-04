@@ -21,7 +21,7 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
         <Link href="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
           <span className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-2xl neu-raised-sm">
-            <Image src="/logo.png" alt="Frank Realtors" fill className="object-cover" priority />
+            <Image src="/logo.png" alt="Frank Realtors" fill sizes="48px" className="object-cover" priority />
           </span>
           <span className="font-display text-2xl leading-none text-navy sm:text-3xl">
             Frank <span className="text-red">Realtors</span>
